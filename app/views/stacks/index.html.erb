@@ -1,0 +1,24 @@
+<h1>My Desk</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @stacks.each do |stack| %>
+  <tr>
+    <td><b><%= stack.name %></b></td>
+    <td><%= link_to 'Edit', edit_stack_path(stack) %></td>
+    <td><%= link_to 'Delete', stack, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Cards', stack %></td>
+    <td><ul>
+    <% stack.cards.each do |card| %>
+        <li><%= card.item %></li>
+    <% end %>
+    </ul></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Add Stack', new_stack_path %>
