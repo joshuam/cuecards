@@ -77,7 +77,7 @@ class StacksController < ApplicationController
     @stack.destroy
 
     respond_to do |format|
-      format.html { redirect_to stacks_url }
+      format.html { redirect_to stacks_url, notice: 'Stack was successfully deleted.' }
       format.json { head :no_content }
     end
   end

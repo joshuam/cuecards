@@ -6,10 +6,10 @@
   <b>Cards:</b>
   <ul>
   <% @stack.cards.each do |card| %>
-    <li><%= card.item %></li>
+    <li><%= link_to card.item, card %> <%= link_to 'Delete', card, confirm: 'Are you sure?', method: :delete %></li>
   <% end %>
   </ul>
 </p>
 <%= link_to 'Add Card', new_card_path %>
 <%= link_to 'Edit', edit_stack_path(@stack) %> |
-<%= link_to 'Back', stacks_path %>
+<%= link_to 'Return to Desk', stacks_path %>

@@ -14,7 +14,7 @@ class CardsController < ApplicationController
   # GET /cards/1.json
   def show
     @card = Card.find(params[:id])
-
+    @stack = current_stack
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @card }
@@ -35,6 +35,7 @@ class CardsController < ApplicationController
   # GET /cards/1/edit
   def edit
     @card = Card.find(params[:id])
+    @stack = current_stack
   end
 
   # POST /cards
@@ -42,11 +43,11 @@ class CardsController < ApplicationController
   def create
     @card = Card.new(params[:card])
     @card.stack_id = current_stack.id
+    @stack = Stack.find(current_stack.id)
     respond_to do |format|
       if @card.save
-        stack = Stack.find(current_stack.id)
-        stack.cards << @card
-        format.html { redirect_to stack, notice: 'Card was successfully added.' }
+        @stack.cards << @card
+        format.html { redirect_to @stack, notice: 'Card was successfully added.' }
         format.json { render json: @card, status: :created, location: @card }
       else
         format.html { render action: "new" }
@@ -75,10 +76,12 @@ class CardsController < ApplicationController
   # DELETE /cards/1.json
   def destroy
     @card = Card.find(params[:id])
+    @stack = current_stack
+    @stack.cards.delete(@card)
     @card.destroy
 
     respond_to do |format|
-      format.html { redirect_to cards_url }
+      format.html { redirect_to @stack, notice: 'Card successfully deleted.' }
       format.json { head :no_content }
     end
   end
