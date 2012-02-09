@@ -42,7 +42,7 @@ div {
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: #2f2f2f;
   h2 {
     text-align: left;
     font-weight: bold;
@@ -53,6 +53,7 @@ div {
     background-color: #c00;
     color: #fff; }
   ul li {
+    font-family: 'Gloria Hallelujah', cursive;
     font-size: 12px;
     list-style: square; } }
     
@@ -127,4 +128,9 @@ div {
 	zoom: 1;
 	filter: alpha(opacity=95);
 	opacity: 0.95;
+}
+
+.red {
+    background: red;
+    color: red;
 }

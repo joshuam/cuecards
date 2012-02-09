@@ -10,8 +10,8 @@
   <% @stack.cards.each do |card| %>
     <div class="card">
         <a class="stack_name" href='../cards/<%= card.id %>'><span><%= card.item %></span></a>
-        <a class="stack_button edit" href='../cards/<%= card.id %>/edit'><img src="../assets/edit.png" /></a>
-        <a class="stack_button delete" href='../cards/<%= card.id %>' data-confirm='Deleting <%= card.item %>, are you sure?' data-method="delete" rel="nofollow"><img src="../assets/delete.png"/></a>
+        <a class="stack_button edit" href='../cards/<%= card.id %>/edit'><img src="../assets/edit.png" alt="Edit" /></a>
+        <a class="stack_button delete" href='../cards/<%= card.id %>' data-confirm='Deleting <%= card.item %>, are you sure?' data-method="delete" rel="nofollow"><img src="../assets/delete.png" alt="Delete"/></a>
     </div>
   <% end %>
   <% else %>
