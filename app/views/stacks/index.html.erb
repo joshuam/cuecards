@@ -1,23 +1,12 @@
 <h1>My Desk</h1>
 
-<table>
-  <tr>
-  </tr>
-
 <% @stacks.each do |stack| %>
-  <tr>
-    <td><b><%= stack.name %></b></td>
-    <td><%= link_to 'Edit', edit_stack_path(stack) %></td>
-    <td><%= link_to 'Delete', stack, confirm: 'Are you sure?', method: :delete %></td>
-    <td><%= link_to 'Cards', stack %></td>
-    <td><ul>
-    <% stack.cards.each do |card| %>
-        <li><%= card.item %></li>
-    <% end %>
-    </ul></td>
-  </tr>
+  <div class="card">
+   <a class="stack_name" href='stacks/<%= stack.id %>'><span><%= stack.name %></span></a>
+   <a class="stack_button edit" href='/stacks/<%= stack.id %>/edit'><img src="assets/edit.png" /></a>
+   <a class="stack_button delete" href='/stacks/<%= stack.id %>' data-confirm="Are you sure?" data-method="delete" rel="nofollow"><img src="assets/delete.png"</a>
+  </div>
 <% end %>
-</table>
 
 <br />
 

@@ -1,8 +1,8 @@
 body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  background: url("bb.png");
+  color: #fff;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 100%;
   line-height: 18px; }
 
 p, ol, ul, td {
@@ -15,20 +15,21 @@ pre {
   padding: 10px;
   font-size: 11px; }
 
-a {
-  color: #000;
-  &:visited {
-    color: #666; }
-  &:hover {
-    color: #fff;
-    background-color: #000; } }
+a { color: #fff; text-decoration: none; }
+a:visited { color: #fff; }
+a:hover { color: #e3d17e; text-decoration: none; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
 
 div {
   &.field, &.actions {
     margin-bottom: 10px; } }
 
 #notice {
-  color: green; }
+  font-family: 'Gloria Hallelujah', cursive; 
+  color: #9cbe68;
+  font-size: 1.5em;
+   }
 
 .field_with_errors {
   padding: 2px;
@@ -54,3 +55,62 @@ div {
   ul li {
     font-size: 12px;
     list-style: square; } }
+    
+.card 
+{ 
+    background: url("card.png");
+    width: 250px;
+    height: 150px;
+    margin: 10px 10px;
+    color: #000;
+    
+    a { text-align: center; color: #000; text-decoration: none; display: block; width: 100%; height: 100%; }
+    a:visited { color: #000; }
+    a:hover { color: #f00; text-decoration: none; }
+    a:focus { outline: thin dotted; }
+    a:hover, a:active { outline: 0; }
+}
+
+
+.card_header
+{
+
+}
+
+.stack_name span
+{
+    position: relative;
+    top: 40%;
+    font-size: 2em;
+}
+
+.stack_button
+{
+    display: inline !important;
+    z-index: 10;
+    width: 25px !important;
+    height: 25px !important;
+    position: relative;
+}
+
+.stack_button.edit
+{
+    top: -151px;
+    left: 195px;
+}
+
+.stack_button.delete
+{
+    top: -149px;
+    left: 195px;
+}
+
+.stack_button_hover
+{
+    
+}
+
+.center
+{
+    margin: 0 auto;
+}

@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Stack Name:</b>
-  <%= @stack.name %><br />
-  <b>Cards:</b>
-  <ul>
+  <h1><%= @stack.name %></h1>
+  <%= link_to 'Add Card', new_card_path %>
+  <%= link_to 'Edit', edit_stack_path(@stack) %> |
+  <%= link_to 'Return to Desk', stacks_path %>
+  <% if @stack.cards.count > 0 %>
   <% @stack.cards.each do |card| %>
-    <li><%= link_to card.item, card %> <%= link_to 'Delete', card, confirm: 'Are you sure?', method: :delete %></li>
+    <div class="card">
+        <a class="stack_name" href='../cards/<%= card.id %>'><span><%= card.item %></span></a>
+        <a class="stack_button edit" href='../cards/<%= card.id %>/edit'><img src="../assets/edit.png" /></a>
+        <a class="stack_button delete" href='../cards/<%= card.id %>' data-confirm='Deleting <%= card.item %>, are you sure?' data-method="delete" rel="nofollow"><img src="../assets/delete.png"/></a>
+    </div>
   <% end %>
-  </ul>
-</p>
-<%= link_to 'Add Card', new_card_path %>
-<%= link_to 'Edit', edit_stack_path(@stack) %> |
-<%= link_to 'Return to Desk', stacks_path %>
+  <% else %>
+    <div>No cards in this stack!</div>
+  <% end %>

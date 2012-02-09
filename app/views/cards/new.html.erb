@@ -1,7 +1,6 @@
-<h1>New card</h1>
+<h1>New card in <%= @stack.name %></h1>
 
 <%= render 'form' %>
 <% if @stack %>
-Adding to <b><%= @stack.name %></b>
 <%  end %>
-<%= link_to 'Cancelaaa', @stack %>
+<%= link_to 'Cancel', @stack %>
