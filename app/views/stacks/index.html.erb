@@ -1,11 +1,17 @@
-<p id="notice"><%= notice %></p>
+<% if notice != nil %>
+<p id="notice" class="round"><%= notice %></p>
+<% end %>
 <div class="header transparent">
 <h1>My Desk</h1>
 <%= link_to 'Add Stack', new_stack_path %>
 </div>
 <div class="content">
 <% @stacks.each do |stack| %>
-  <div class="card">
+    <% if stack.cards.count > 1 %>
+        <div class="card stack">
+    <% else %>
+        <div class="card single">
+    <% end %>
    <a class="stack_name" href='stacks/<%= stack.id %>'><span><%= stack.name %></span></a>
    <a class="stack_button edit" href='/stacks/<%= stack.id %>/edit'><img src="assets/edit.png" alt="Edit" /></a>
    <a class="stack_button delete" href='/stacks/<%= stack.id %>' data-confirm='Deleting <%= stack.name %> stack, are you sure?' data-method="delete" rel="nofollow"><img src="assets/delete.png" alt="Delete" /></a>

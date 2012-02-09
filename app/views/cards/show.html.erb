@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<% if notice != nil %>
+<p class="round" id="notice"><%= notice %></p>
+<% end %>
 <p>
   <b>Item:</b>
   <%= @card.item %>
