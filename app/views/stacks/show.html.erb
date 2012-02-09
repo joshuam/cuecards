@@ -1,8 +1,11 @@
 <p id="notice"><%= notice %></p>
+<div class="header transparent">
   <h1><%= @stack.name %></h1>
-  <%= link_to 'Add Card', new_card_path %>
+  <%= link_to 'Add Card', new_card_path %> |
   <%= link_to 'Edit', edit_stack_path(@stack) %> |
   <%= link_to 'Return to Desk', stacks_path %>
+</div>
+<div class="content">
   <% if @stack.cards.count > 0 %>
   <% @stack.cards.each do |card| %>
     <div class="card">
@@ -14,3 +17,4 @@
   <% else %>
     <div>No cards in this stack!</div>
   <% end %>
+</div>

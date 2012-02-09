@@ -56,8 +56,23 @@ div {
     font-size: 12px;
     list-style: square; } }
     
-.card 
-{ 
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-left: 10px;
+    background: #2f2f2f;
+    z-index: 20;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.content {
+    position: relative;
+    top: 70px;
+}
+
+.card { 
     background: url("card.png");
     width: 250px;
     height: 150px;
@@ -72,20 +87,17 @@ div {
 }
 
 
-.card_header
-{
+.card_header {
 
 }
 
-.stack_name span
-{
+.stack_name span {
     position: relative;
     top: 40%;
     font-size: 2em;
 }
 
-.stack_button
-{
+.stack_button {
     display: inline !important;
     z-index: 10;
     width: 25px !important;
@@ -93,24 +105,26 @@ div {
     position: relative;
 }
 
-.stack_button.edit
-{
+.stack_button.edit {
     top: -151px;
     left: 195px;
 }
 
-.stack_button.delete
-{
+.stack_button.delete {
     top: -149px;
     left: 195px;
 }
 
-.stack_button_hover
-{
+.stack_button_hover {
     
 }
 
-.center
-{
+.center {
     margin: 0 auto;
+}
+
+.transparent {
+	zoom: 1;
+	filter: alpha(opacity=95);
+	opacity: 0.95;
 }

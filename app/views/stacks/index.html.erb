@@ -1,5 +1,7 @@
+<div class="header transparent">
 <h1>My Desk</h1>
-
+</div>
+<div class="content">
 <% @stacks.each do |stack| %>
   <div class="card">
    <a class="stack_name" href='stacks/<%= stack.id %>'><span><%= stack.name %></span></a>
@@ -11,3 +13,4 @@
 <br />
 
 <%= link_to 'Add Stack', new_stack_path %>
+</div>
