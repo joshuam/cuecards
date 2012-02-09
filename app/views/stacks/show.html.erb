@@ -2,7 +2,7 @@
 <div class="header transparent">
   <h1><%= @stack.name %></h1>
   <%= link_to 'Add Card', new_card_path %> |
-  <%= link_to 'Edit', edit_stack_path(@stack) %> |
+  <!--<%= link_to 'Edit', edit_stack_path(@stack) %> |-->
   <%= link_to 'Return to Desk', stacks_path %>
 </div>
 <div class="content">
@@ -11,7 +11,7 @@
     <div class="card">
         <a class="stack_name" href='../cards/<%= card.id %>'><span><%= card.item %></span></a>
         <a class="stack_button edit" href='../cards/<%= card.id %>/edit'><img src="../assets/edit.png" alt="Edit" /></a>
-        <a class="stack_button delete" href='../cards/<%= card.id %>' data-confirm='Deleting <%= card.item %>, are you sure?' data-method="delete" rel="nofollow"><img src="../assets/delete.png" alt="Delete"/></a>
+        <a class="stack_button delete" href='../cards/<%= card.id %>' data-confirm='Deleting <%= card.item %> card, are you sure?' data-method="delete" rel="nofollow"><img src="../assets/delete.png" alt="Delete"/></a>
     </div>
   <% end %>
   <% else %>

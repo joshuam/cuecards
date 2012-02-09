@@ -1,16 +1,14 @@
+<p id="notice"><%= notice %></p>
 <div class="header transparent">
 <h1>My Desk</h1>
+<%= link_to 'Add Stack', new_stack_path %>
 </div>
 <div class="content">
 <% @stacks.each do |stack| %>
   <div class="card">
    <a class="stack_name" href='stacks/<%= stack.id %>'><span><%= stack.name %></span></a>
    <a class="stack_button edit" href='/stacks/<%= stack.id %>/edit'><img src="assets/edit.png" alt="Edit" /></a>
-   <a class="stack_button delete" href='/stacks/<%= stack.id %>' data-confirm="Are you sure?" data-method="delete" rel="nofollow"><img src="assets/delete.png" alt="Delete" /></a>
+   <a class="stack_button delete" href='/stacks/<%= stack.id %>' data-confirm='Deleting <%= stack.name %> stack, are you sure?' data-method="delete" rel="nofollow"><img src="assets/delete.png" alt="Delete" /></a>
   </div>
 <% end %>
-
-<br />
-
-<%= link_to 'Add Stack', new_stack_path %>
 </div>
