@@ -31,13 +31,26 @@ div {
     border-radius: 5px;
 }
 
+#login {
+  font-family: 'Gloria Hallelujah', cursive; 
+  color: #9cbe68;
+  font-size: 1em;
+  z-index:98;
+  position: absolute;
+  right: 5px;
+  float: right;
+  padding: 10px 5px 12px;
+  background: #1e1e1e;
+  border: 1px solid black;
+}
+
 #notice {
   font-family: 'Gloria Hallelujah', cursive; 
   color: #9cbe68;
   font-size: 1.5em;
   z-index:99;
   position: fixed;
-  left: 38%;
+  left: 30%;
   padding: 10px 5px 12px;
   background: #1e1e1e;
   border: 1px solid black;

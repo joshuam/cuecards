@@ -1,11 +1,10 @@
 <% if notice != nil %>
 <p class="round" id="notice"><%= notice %></p>
 <% end %>
-<p>
-  <b>Item:</b>
-  <%= @card.item %>
-</p>
-
+<div class="header transparent">
+<h1><%= @card.item %></h1>
+</div>
+<div class="content">
 <p>
   <b>Definition:</b>
   <%= @card.definition %>
@@ -14,3 +13,4 @@
 
 <%= link_to 'Edit', edit_card_path(@card) %> |
 <%= link_to 'Back to Stack', @stack %>
+</div>

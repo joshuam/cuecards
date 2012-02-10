@@ -10,6 +10,12 @@
 </head>
 <body class='<%= controller.controller_name %>'>
 
+<% if signed_in? %>
+  <div id="login" class="round">
+  <%= current_user.email %>
+  <%= link_to "Sign out", sign_out_path, :method => :delete %>
+  </div>
+<% end %>
 <%= yield %>
 
 

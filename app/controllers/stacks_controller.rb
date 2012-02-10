@@ -2,7 +2,7 @@ class StacksController < ApplicationController
   # GET /stacks
   # GET /stacks.json
   def index
-    @stacks = Stack.all
+    @stacks = Stack.where('user_id = ?', current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,7 +42,7 @@ class StacksController < ApplicationController
   # POST /stacks.json
   def create
     @stack = Stack.new(params[:stack])
-
+    @stack.user_id = current_user.id
     respond_to do |format|
       if @stack.save
         format.html { redirect_to @stack, notice: 'Stack was successfully created.' }

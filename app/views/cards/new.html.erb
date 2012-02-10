@@ -1,6 +1,9 @@
+<div class="header transparent">
 <h1>New card in <%= @stack.name %></h1>
-
+</div>
+<div class="content">
 <%= render 'form' %>
 <% if @stack %>
 <%  end %>
 <%= link_to 'Cancel', @stack %>
+</div>
