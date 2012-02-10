@@ -1,6 +1,4 @@
 Cuecards::Application.routes.draw do
-  resources :users
-
   resources :stacks
 
   resources :cards
