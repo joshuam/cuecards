@@ -3,14 +3,11 @@
 <% end %>
 <div class="header transparent">
 <h1><%= @card.item %></h1>
+<%= link_to 'Back to Stack', @stack %>
 </div>
 <div class="content">
 <p>
   <b>Definition:</b>
   <%= @card.definition %>
 </p>
-
-
-<%= link_to 'Edit', edit_card_path(@card) %> |
-<%= link_to 'Back to Stack', @stack %>
 </div>

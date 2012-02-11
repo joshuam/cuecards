@@ -5,7 +5,7 @@
   <h1><%= @stack.name %></h1>
   <%= link_to 'Add Card', new_card_path %> |
   <!--<%= link_to 'Edit', edit_stack_path(@stack) %> |-->
-  <%= link_to 'Return to Desk', stacks_path %>
+  <%= link_to 'Back to Desk', stacks_path %>
 </div>
 <div class="content">
   <% if @stack.cards.count > 0 %>

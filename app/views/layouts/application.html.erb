@@ -9,11 +9,6 @@
   <!-- icons courtest of http://glyphicons.com/ -->
 </head>
 <body class='<%= controller.controller_name %>'>
-<% if flash != nil %>
-    <% flash.each do |key, value| -%>
-      <div class="flash <%= key %>"><%= value %></div>
-    <% end -%>
-<% end %>
 <% if signed_in? %>
   <div id="login" class="round">
   <%= current_user.email %>
@@ -21,7 +16,10 @@
   </div>
 <% end %>
 <%= yield %>
-
-
+<% if flash != nil and current_user == nil %>
+    <% flash.each do |key, value| -%>
+      <div class="flash <%= key %>"><%= value %></div>
+    <% end -%>
+<% end %>
 </body>
 </html>

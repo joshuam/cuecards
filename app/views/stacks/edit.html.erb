@@ -1,6 +1,8 @@
-<h1>Editing stack</h1>
-
+<div class="header transparent">
+<h1>Edit stack</h1>
+<%= link_to 'Back to Desk', stacks_path %>
+</div>
+<div class="content">
 <%= render 'form' %>
-
-<%= link_to 'Show', @stack %> |
-<%= link_to 'Back', stacks_path %>
+<%= link_to 'Cancel', stacks_path %>
+</div>

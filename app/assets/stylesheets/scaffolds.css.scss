@@ -36,7 +36,7 @@ div {
   color: #9cbe68;
   font-size: 1em;
   z-index:98;
-  position: absolute;
+  position: fixed;
   right: 5px;
   float: right;
   padding: 10px 5px 12px;
@@ -81,6 +81,7 @@ div {
     font-family: 'Gloria Hallelujah', cursive;
     font-size: 12px;
     list-style: square; } }
+    
     
 .header {
     position: fixed;

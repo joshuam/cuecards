@@ -1,5 +1,6 @@
 <div class="header transparent">
-<h1>New card in <%= @stack.name %></h1>
+    <h1>New card in <%= @stack.name %></h1>
+    <%= link_to 'Back to Stack', @stack %>
 </div>
 <div class="content">
 <%= render 'form' %>
