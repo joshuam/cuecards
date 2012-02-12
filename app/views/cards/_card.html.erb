@@ -1,5 +1,5 @@
 <div class="card single">
-    <a class="stack_name" href='../cards/<%= card.id %>'><span><%= card.item %></span></a>
+    <a class="stack_name" href='../cards/<%= card.id %>' data-remote="true"><span><%= card.item %></span></a>
     <a class="stack_button edit" href='../cards/<%= card.id %>/edit'><img src="../assets/edit.png" alt="Edit" /></a>
     <a class="stack_button delete" href='../cards/<%= card.id %>' data-confirm='Deleting <%= card.item %> card, are you sure?' data-method="delete" data-remote="true" rel="nofollow"><img src="../assets/delete.png" alt="Delete"/></a>
 </div>

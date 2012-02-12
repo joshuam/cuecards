@@ -1,5 +1,6 @@
 body {
-  background: url("bb.png") fixed;
+  /*background: url("bb.png") fixed;*/
+  background: black;
   color: #fff;
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 100%;
@@ -101,7 +102,6 @@ div {
 
 #card_container {
     width: 1000px;
-    margin: 0 auto;
     height: 100%;
 }
 
@@ -116,9 +116,8 @@ div {
     background: #2f2f2f;
     border: 1px solid black;
     width: 500px;
-    height: 500px;
+    height: 300px;
     z-index: 1;
-    display: none;
 }
 .card {
     margin: 10px 10px;

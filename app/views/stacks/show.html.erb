@@ -9,11 +9,7 @@
 <div class="content">
   <div id="card_container">
   <div id="cards">
-      <% if @stack.cards.count > 0 %>
-        <%= render(@stack.cards) %>
-      <% else %>
-        <div class="pad">No cards in this stack!</div>
-      <% end %>
+      <%= render(@stack.cards) || 'No cards in this stack!' %>
   </div>
   <div id="definition" class="transparent round">
   </div>
