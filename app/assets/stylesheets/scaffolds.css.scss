@@ -99,10 +99,31 @@ div {
     top: 75px;
 }
 
+#card_container {
+    width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+#cards {
+    width: 270px;
+}
+
+#definition {
+    position: fixed;
+    right: 5px;
+    top: 85px;
+    background: #2f2f2f;
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    display: none;
+}
 .card {
     margin: 10px 10px;
     color: #000;
-    
+    word-wrap: break-word;
     a { text-align: center; color: #000; text-decoration: none; border: none; display: block; width: 100%; height: 100%; }
     a:visited { color: #000; }
     a:hover { color: #f00; text-decoration: none; }

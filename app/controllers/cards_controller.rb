@@ -83,6 +83,7 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to @stack, notice: 'Card successfully deleted.' }
+      format.js
       format.json { head :no_content }
     end
   end

@@ -75,9 +75,10 @@ class StacksController < ApplicationController
   def destroy
     @stack = Stack.find(params[:id])
     @stack.destroy
-
+    @stacks = Stack.where('user_id = ?', current_user.id)
     respond_to do |format|
       format.html { redirect_to stacks_url, notice: 'Stack was successfully deleted.' }
+      format.js
       format.json { head :no_content }
     end
   end

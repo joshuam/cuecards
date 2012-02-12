@@ -4,19 +4,18 @@
 <div class="header transparent">
   <h1><%= @stack.name %></h1>
   <%= link_to 'Add Card', new_card_path %> |
-  <!--<%= link_to 'Edit', edit_stack_path(@stack) %> |-->
   <%= link_to 'Back to Desk', stacks_path %>
 </div>
 <div class="content">
-  <% if @stack.cards.count > 0 %>
-  <% @stack.cards.each do |card| %>
-    <div class="card single">
-        <a class="stack_name" href='../cards/<%= card.id %>'><span><%= card.item %></span></a>
-        <a class="stack_button edit" href='../cards/<%= card.id %>/edit'><img src="../assets/edit.png" alt="Edit" /></a>
-        <a class="stack_button delete" href='../cards/<%= card.id %>' data-confirm='Deleting <%= card.item %> card, are you sure?' data-method="delete" rel="nofollow"><img src="../assets/delete.png" alt="Delete"/></a>
-    </div>
-  <% end %>
-  <% else %>
-    <div class="pad">No cards in this stack!</div>
-  <% end %>
+  <div id="card_container">
+  <div id="cards">
+      <% if @stack.cards.count > 0 %>
+        <%= render(@stack.cards) %>
+      <% else %>
+        <div class="pad">No cards in this stack!</div>
+      <% end %>
+  </div>
+  <div id="definition" class="transparent round">
+  </div>
+  </div>
 </div>
