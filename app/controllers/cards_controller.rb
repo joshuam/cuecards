@@ -62,10 +62,10 @@ class CardsController < ApplicationController
   # PUT /cards/1.json
   def update
     @card = Card.find(params[:id])
-
+    @stack = current_stack
     respond_to do |format|
       if @card.update_attributes(params[:card])
-        format.html { redirect_to @card, notice: 'Card was successfully updated.' }
+        format.html { redirect_to @stack, notice: 'Card was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

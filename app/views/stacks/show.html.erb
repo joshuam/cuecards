@@ -7,11 +7,12 @@
   <%= link_to 'Back to Desk', stacks_path %>
 </div>
 <div class="content">
-  <div id="card_container">
   <div id="cards">
       <%= render(@stack.cards) || 'No cards in this stack!' %>
   </div>
   <div id="definition" class="transparent round">
-  </div>
+    <div id="card_definition">
+        No card selected
+    </div>
   </div>
 </div>

@@ -1,5 +1,4 @@
 body {
-  /*background: url("bb.png") fixed;*/
   background: black;
   color: #fff;
   font-family: 'Gloria Hallelujah', cursive;
@@ -113,12 +112,20 @@ div {
     position: fixed;
     right: 5px;
     top: 85px;
-    background: #2f2f2f;
+    background: url("card_large.png");
     border: 1px solid black;
     width: 500px;
     height: 300px;
     z-index: 1;
 }
+
+#card_definition {
+  color: black;
+  width: 500px;
+  height: 300px;
+  padding-left: 10px;
+}
+
 .card {
     margin: 10px 10px;
     color: #000;
