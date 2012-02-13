@@ -4,6 +4,6 @@
     <div class="card single">
 <% end %>
 <a class="stack_name" href='stacks/<%= stack.id %>'><span><%= stack.name %></span></a>
-<a class="stack_button edit" href='/stacks/<%= stack.id %>/edit'><img src="assets/edit.png" alt="Edit" /></a>
+<a class="stack_button edit" href='/stacks/<%= stack.id %>/edit' data-remote="true"><img src="assets/edit.png" alt="Edit" /></a>
 <a class="stack_button delete" href='/stacks/<%= stack.id %>' data-confirm='Deleting <%= stack.name %> stack, are you sure?' data-method="delete" data-remote="true" rel="nofollow"><img src="assets/delete.png" alt="Delete" /></a>
 </div>

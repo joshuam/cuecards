@@ -38,6 +38,11 @@ class CardsController < ApplicationController
   def edit
     @card = Card.find(params[:id])
     @stack = current_stack
+    respond_to do |format|
+    format.html
+    format.js
+    format.json { render json: @card }
+    end
   end
 
   # POST /cards
@@ -66,6 +71,7 @@ class CardsController < ApplicationController
     respond_to do |format|
       if @card.update_attributes(params[:card])
         format.html { redirect_to @stack, notice: 'Card was successfully updated.' }
+        format.js
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

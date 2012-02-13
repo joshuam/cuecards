@@ -36,6 +36,11 @@ class StacksController < ApplicationController
   # GET /stacks/1/edit
   def edit
     @stack = Stack.find(params[:id])
+    
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # POST /stacks
@@ -58,13 +63,15 @@ class StacksController < ApplicationController
   # PUT /stacks/1.json
   def update
     @stack = Stack.find(params[:id])
-
+    @stacks = Stack.where('user_id = ?', current_user.id)
     respond_to do |format|
       if @stack.update_attributes(params[:stack])
         format.html { redirect_to @stack, notice: 'Stack was successfully updated.' }
+        format.js
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
+        format.js
         format.json { render json: @stack.errors, status: :unprocessable_entity }
       end
     end
