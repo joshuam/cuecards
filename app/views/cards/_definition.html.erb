@@ -1,6 +1,10 @@
 <div id="card_definition">
-<h2><%= card.item %></h2>
+<% if card != nil %>
+    <h2><%= card.item %></h2>
     <div>
-        <%= @card.definition %>
+        <%= card.definition %>
     </div>
+<% else %>
+    <h3>No card selected</h3>
+<% end %>
 </div>

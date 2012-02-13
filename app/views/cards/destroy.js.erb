@@ -1,1 +1,6 @@
 $("#cards").html("<%=j render @stack.cards %>");
+    <% if @stack.cards.length == 0 %>
+        $("#definition").html("<%=j render :partial => "definition", :locals => { :card => @stack.cards[0] } %>");
+    <% else %>
+        $("#definition").html("<%=j render :partial => "definition", :locals => { :card => nil } %>");    
+    <% end %>
